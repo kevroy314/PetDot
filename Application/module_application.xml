@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_application" default="compile.module.application">
+  <dirname property="module.application.basedir" file="${ant.file.module_application}"/>
+  
+  <property name="module.jdk.home.application" value="${jdk.home.android_api_21_platform}"/>
+  <property name="module.jdk.bin.application" value="${jdk.bin.android_api_21_platform}"/>
+  <property name="module.jdk.classpath.application" value="jdk.classpath.android_api_21_platform"/>
+  
+  <property name="compiler.args.application" value="-encoding windows-1252 -source 1.7 ${compiler.args}"/>
+  
+  <property name="application.output.dir" value="${module.application.basedir}/build/intermediates/classes/debug"/>
+  <property name="application.testoutput.dir" value="${module.application.basedir}/build/intermediates/classes/test/debug"/>
+  
+  <path id="application.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="application.module.production.classpath">
+    <path refid="${module.jdk.classpath.application}"/>
+    <path refid="library.support-v4-21.0.2.classpath"/>
+    <path refid="library.recyclerview-v7-21.0.2.classpath"/>
+    <path refid="library.support-annotations-21.0.2.classpath"/>
+    <path refid="library.support-v13-21.0.2.classpath"/>
+    <path refid="library.cardview-v7-21.0.2.classpath"/>
+    <path refid="library.appcompat-v7-21.0.2.classpath"/>
+  </path>
+  
+  <path id="application.runtime.production.module.classpath">
+    <pathelement location="${application.output.dir}"/>
+    <path refid="library.support-v4-21.0.2.classpath"/>
+    <path refid="library.recyclerview-v7-21.0.2.classpath"/>
+    <path refid="library.support-annotations-21.0.2.classpath"/>
+    <path refid="library.support-v13-21.0.2.classpath"/>
+    <path refid="library.cardview-v7-21.0.2.classpath"/>
+    <path refid="library.appcompat-v7-21.0.2.classpath"/>
+  </path>
+  
+  <path id="application.module.classpath">
+    <path refid="${module.jdk.classpath.application}"/>
+    <pathelement location="${application.output.dir}"/>
+    <path refid="library.support-v4-21.0.2.classpath"/>
+    <path refid="library.recyclerview-v7-21.0.2.classpath"/>
+    <path refid="library.support-annotations-21.0.2.classpath"/>
+    <path refid="library.support-v13-21.0.2.classpath"/>
+    <path refid="library.cardview-v7-21.0.2.classpath"/>
+    <path refid="library.appcompat-v7-21.0.2.classpath"/>
+  </path>
+  
+  <path id="application.runtime.module.classpath">
+    <pathelement location="${application.testoutput.dir}"/>
+    <pathelement location="${application.output.dir}"/>
+    <path refid="library.support-v4-21.0.2.classpath"/>
+    <path refid="library.recyclerview-v7-21.0.2.classpath"/>
+    <path refid="library.support-annotations-21.0.2.classpath"/>
+    <path refid="library.support-v13-21.0.2.classpath"/>
+    <path refid="library.cardview-v7-21.0.2.classpath"/>
+    <path refid="library.appcompat-v7-21.0.2.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.application">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.application">
+    <patternset refid="excluded.from.module.application"/>
+  </patternset>
+  
+  <path id="application.module.sourcepath">
+    <dirset dir="${module.application.basedir}">
+      <include name="build/generated/source/r/debug"/>
+      <include name="build/generated/source/aidl/debug"/>
+      <include name="build/generated/source/buildConfig/debug"/>
+      <include name="build/generated/source/rs/debug"/>
+      <include name="build/generated/res/rs/debug"/>
+      <include name="src/main/res"/>
+      <include name="src/main/java"/>
+    </dirset>
+  </path>
+  
+  <path id="application.module.test.sourcepath">
+    <dirset dir="${module.application.basedir}">
+      <include name="build/generated/source/r/test/debug"/>
+      <include name="build/generated/source/aidl/test/debug"/>
+      <include name="build/generated/source/buildConfig/test/debug"/>
+      <include name="build/generated/source/rs/test/debug"/>
+      <include name="build/generated/res/rs/test/debug"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.application" depends="compile.module.application.production,compile.module.application.tests" description="Compile module Application"/>
+  
+  <target name="compile.module.application.production" depends="register.custom.compilers" description="Compile module Application; production classes">
+    <mkdir dir="${application.output.dir}"/>
+    <javac2 destdir="${application.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.application}/javac">
+      <compilerarg line="${compiler.args.application}"/>
+      <bootclasspath refid="application.module.bootclasspath"/>
+      <classpath refid="application.module.production.classpath"/>
+      <src refid="application.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.application"/>
+    </javac2>
+    
+    <copy todir="${application.output.dir}">
+      <fileset dir="${module.application.basedir}/build/generated/source/r/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.application.basedir}/build/generated/source/aidl/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.application.basedir}/build/generated/source/buildConfig/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.application.basedir}/build/generated/source/rs/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.application.basedir}/build/generated/res/rs/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.application.basedir}/src/main/res">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.application.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.application.tests" depends="register.custom.compilers,compile.module.application.production" description="compile module Application; test classes" unless="skip.tests">
+    <mkdir dir="${application.testoutput.dir}"/>
+    <javac2 destdir="${application.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.application}/javac">
+      <compilerarg line="${compiler.args.application}"/>
+      <bootclasspath refid="application.module.bootclasspath"/>
+      <classpath refid="application.module.classpath"/>
+      <src refid="application.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.application"/>
+    </javac2>
+    
+    <copy todir="${application.testoutput.dir}">
+      <fileset dir="${module.application.basedir}/build/generated/source/r/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.application.basedir}/build/generated/source/aidl/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.application.basedir}/build/generated/source/buildConfig/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.application.basedir}/build/generated/source/rs/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.application.basedir}/build/generated/res/rs/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.application" description="cleanup module">
+    <delete dir="${application.output.dir}"/>
+    <delete dir="${application.testoutput.dir}"/>
+  </target>
+</project>

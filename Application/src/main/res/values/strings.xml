@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2014 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+<resources>
+    <string-array name="preferences_titles">
+        <item>Home</item>
+        <item>IP Address</item>
+        <item>Port</item>
+        <item>Connect</item>
+        <item>Move Limits</item>
+        <item>Control Mode</item>
+    </string-array>
+    <string-array name="preferences_text">
+        <item>nothing</item>
+        <item>Enter IP Address</item>
+        <item>Enter Port</item>
+        <item>nothing</item>
+        <item>Enter Move Limits</item>
+        <item>Select Control Mode</item>
+    </string-array>
+    <string-array name="control_mode_options">
+        <item>Manual</item>
+        <item>Random (Cat and Mouse)</item>
+        <item>Random (Drunkard\'s Walk)</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+</resources>

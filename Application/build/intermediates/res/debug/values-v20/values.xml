@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/dev/AndroidStudioProjects/PetDot/Application/src/main/res/values-v20/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="android:Theme.Material">
+    </style>
+</resources>
