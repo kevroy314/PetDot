@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/dev/AndroidStudioProjects/PetDot/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/res/values-v11/values.xml -->
+    <!-- From: file:/C:/Users/Administrator/Desktop/PetDot/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/res/values-v11/values.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat.Inverse">
         <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
@@ -354,7 +354,7 @@
         <item name="android:listChoiceIndicatorSingle">@drawable/abc_btn_radio_material</item>
         <item name="android:listChoiceIndicatorMultiple">@drawable/abc_btn_check_material</item>
     </style>
-    <!-- From: file:/C:/Users/dev/AndroidStudioProjects/PetDot/Application/src/main/res/values-v11/template-styles.xml -->
+    <!-- From: file:/C:/Users/Administrator/Desktop/PetDot/Application/src/main/res/values-v11/template-styles.xml -->
     <eat-comment/>
     <style name="Theme.Base" parent="android:Theme.Holo"/>
 </resources>

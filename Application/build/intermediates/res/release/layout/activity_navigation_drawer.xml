@@ -45,4 +45,4 @@
         android:choiceMode="singleChoice"
         android:divider="@null"
         />
-</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/dev/AndroidStudioProjects/PetDot/Application/src/main/res/layout/activity_navigation_drawer.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/Administrator/Desktop/PetDot/Application/src/main/res/layout/activity_navigation_drawer.xml -->
