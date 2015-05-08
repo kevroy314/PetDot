@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/edit_name"
+    android:id="@+id/edit_text"
     android:layout_width="wrap_content"
     android:layout_height="120dp"
     android:paddingLeft="10dp"
@@ -11,20 +11,19 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/label_ip_address"
+        android:id="@+id/label_text"
         android:paddingLeft="10dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Placeholder" />
 
-    <EditText
-        android:id="@+id/text_ip_address"
+    <Spinner
+        android:id="@+id/value_spinner"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:inputType="text"
         android:imeOptions="actionDone" />
     <LinearLayout
         android:id="@+id/LinearLayout02"
@@ -49,4 +48,4 @@
         android:imeActionId="0"
         android:text="Cancel"/>
         </LinearLayout>
-</LinearLayout>
+</LinearLayout><!-- From: file:/C:/Users/Administrator/Desktop/PetDot/Application/src/main/res/layout/fragment_edit_dropdown.xml -->

@@ -21,8 +21,10 @@ import android.app.FragmentManager;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Window;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.text.TextWatcher;
 import android.text.Editable;
@@ -82,8 +84,10 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
     private CharSequence mTitle;
     private String[] mPreferencesTitles;
     private String[] mPreferencesText;
+    private String[] mPreferencesKeys;
+    private String[] mPreferencesDefaultValues;
 
-    private SharedPreferences prefs;
+    private static SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,8 +97,12 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
         prefs = getSharedPreferences(PREFS_NAME, 0);
 
         mTitle = mDrawerTitle = getTitle();
+
         mPreferencesTitles = getResources().getStringArray(R.array.preferences_titles);
-        mPreferencesText= getResources().getStringArray(R.array.preferences_text);
+        mPreferencesText = getResources().getStringArray(R.array.preferences_text);
+        mPreferencesKeys = getResources().getStringArray(R.array.preferences_keys);
+        mPreferencesDefaultValues = getResources().getStringArray(R.array.preferences_default_values);
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (RecyclerView) findViewById(R.id.left_drawer);
 
@@ -180,22 +188,30 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
                 setTitle(mPreferencesTitles[position]);
                 break;
             case 1: //IP Address
-                EditSettingDialog editIPAddressDialog = new EditSettingDialog();
-                editIPAddressDialog.SetPreferencesObject(prefs);
-                //editIPAddressDialog.SetPromptText(mPreferencesText[position]);
-                editIPAddressDialog.show(fm, "dlg_edit_name");
+                EditTextDialog editTextDialog = EditTextDialog.newInstance(
+                        mPreferencesText[position],
+                        mPreferencesKeys[position], getResources().getString(R.string.ip_regex),
+                        mPreferencesDefaultValues[position]);
+                editTextDialog.show(fm, "dlg_edit_text");
                 break;
             case 2: //Port
-                EditSettingDialog editPortDialog = new EditSettingDialog();
-                editPortDialog.SetPreferencesObject(prefs);
-                //editPortDialog.SetPromptText(mPreferencesText[position]);
-                editPortDialog.show(fm, "dlg_edit_name");
+                EditTextDialog editPortDialog = EditTextDialog.newInstance(
+                        mPreferencesText[position],
+                        mPreferencesKeys[position], getResources().getString(R.string.port_regex),
+                        mPreferencesDefaultValues[position]);
+                editPortDialog.show(fm, "dlg_edit_text");
                 break;
             case 3: //Connect
                 break;
             case 4: //Move Limits
                 break;
             case 5: //Control Mode
+                SpinnerDialog editControlMode = SpinnerDialog.newInstance(
+                        mPreferencesText[position],
+                        mPreferencesKeys[position],
+                        getResources().getStringArray(R.array.control_mode_options),
+                        Integer.parseInt(mPreferencesDefaultValues[position]));
+                editControlMode.show(fm, "dlg_edit_dropdown");
                 break;
             default:
                 setTitle(mPreferencesTitles[position]);
@@ -232,93 +248,178 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-    public static class EditSettingDialog extends DialogFragment implements OnEditorActionListener {
+    public static void Save(String tag, String value){
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(tag, value);
+        editor.commit();
+    }
 
-        private static final Pattern PARTIAl_IP_ADDRESS =
-                Pattern.compile("^((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9])\\.){0,3}"+
-                        "((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9])){0,1}$");
+    public static void Save(String tag, int value){
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt(tag, value);
+        editor.commit();
+    }
 
-        private TextView mTextView;
+    public static String GetValue(String tag, String defaultValue){
+        return prefs.getString(tag, defaultValue);
+    }
+
+    public static int GetValue(String tag, int defaultValue) {
+        return prefs.getInt(tag, defaultValue);
+    }
+
+    public static class EditTextDialog extends DialogFragment implements OnEditorActionListener {
+
+        private Pattern regex;
+        private String key;
+
         private EditText mEditText;
+        private TextView mTextView;
         private Button mSaveButton;
         private Button mCancelButton;
-        private SharedPreferences mPrefs;
 
-        public EditSettingDialog() {
-            mPrefs = null;
+        public EditTextDialog() { }
+
+        public static EditTextDialog newInstance(String message, String key,
+                                                 String regex, String defaultValue) {
+            EditTextDialog f = new EditTextDialog();
+            Bundle args = new Bundle();
+            args.putString("message", message);
+            args.putString("key", key);
+            args.putString("regex", regex);
+            args.putString("defaultValue", defaultValue);
+            f.setArguments(args);
+            return f;
         }
-
-        public void SetPreferencesObject(SharedPreferences prefs) {
-            mPrefs = prefs;
-        }
-
-        public void SetPromptText(String text) { mTextView.setText(text); }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-            View view = inflater.inflate(R.layout.fragment_edit_ip_address, container);
-            mTextView = (TextView) view.findViewById(R.id.label_ip_address);
-            mEditText = (EditText) view.findViewById(R.id.text_ip_address);
+            View view = inflater.inflate(R.layout.fragment_edit_text, container);
+            mEditText = (EditText) view.findViewById(R.id.value_text);
+            mTextView = (TextView) view.findViewById(R.id.label_text);
+            mTextView.setText(getArguments().getString("message"));
             mSaveButton = (Button) view.findViewById(R.id.btn_save);
             mCancelButton = (Button) view.findViewById(R.id.btn_cancel);
 
+            regex = Pattern.compile(getArguments().getString("regex"));
+            key = getArguments().getString("key");
+
             mSaveButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    Save("ipAddress");
+                    Save(key, mEditText.getText().toString());
+                    Close();
                 }
             });
             mCancelButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    Cancel();
+                    Close();
                 }
             });
-            String ipAddress = mPrefs.getString("ipAddress", "0.0.0.0");
-            mEditText.setText(ipAddress);
-            // Show soft keyboard automatically
+            String savedValue = GetValue(key, getArguments().getString("defaultValue"));
+            mEditText.setText(savedValue);
             mEditText.requestFocus();
-            getDialog().getWindow().setSoftInputMode(
-                    LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+            getDialog().getWindow().setSoftInputMode(LayoutParams.SOFT_INPUT_STATE_VISIBLE);
             mEditText.setOnEditorActionListener(this);
-
             mEditText.addTextChangedListener(new TextWatcher() {
-                @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
-                @Override public void beforeTextChanged(CharSequence s,int start,int count,int after) {}
-
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {}
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
                 private String mPreviousText = "";
                 @Override
                 public void afterTextChanged(Editable s) {
-                    if(PARTIAl_IP_ADDRESS.matcher(s).matches()) {
+                    if (regex.matcher(s).matches()) {
                         mPreviousText = s.toString();
                     } else {
                         s.replace(0, s.length(), mPreviousText);
                     }
                 }
             });
-
             return view;
         }
-
         @Override
         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
             if (EditorInfo.IME_ACTION_DONE == actionId) {
-                // Return input text to activity
-                Save("ipAddress");
+                Save(key, mEditText.getText().toString());
+                Close();
                 return true;
             }
             return false;
         }
+        public void Close(){this.dismiss();}
+    }
 
-        public void Save(String tag){
-            SharedPreferences.Editor editor = mPrefs.edit();
-            editor.putString(tag, mEditText.getText().toString());
-            editor.commit();
-            this.dismiss();
+    public static class SpinnerDialog extends DialogFragment implements OnEditorActionListener {
+
+        private String key;
+
+        private Spinner mSpinner;
+        private TextView mTextView;
+        private Button mSaveButton;
+        private Button mCancelButton;
+
+        public SpinnerDialog() { }
+
+        public static SpinnerDialog newInstance(String message, String key,
+                                                 String[] options, int defaultValue) {
+            SpinnerDialog f = new SpinnerDialog();
+            Bundle args = new Bundle();
+            args.putString("message", message);
+            args.putString("key", key);
+            args.putStringArray("options", options);
+
+            //args.putInt("defaultValue", defaultValue);
+            f.setArguments(args);
+            return f;
         }
 
-        public void Cancel(){
-            this.dismiss();
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+            View view = inflater.inflate(R.layout.fragment_edit_dropdown, container);
+            mSpinner = (Spinner) view.findViewById(R.id.value_spinner);
+            mTextView = (TextView) view.findViewById(R.id.label_text);
+            mTextView.setText(getArguments().getString("message"));
+            mSaveButton = (Button) view.findViewById(R.id.btn_save);
+            mCancelButton = (Button) view.findViewById(R.id.btn_cancel);
+
+            String[] options = getArguments().getStringArray("options");
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
+                    android.R.layout.simple_spinner_item, options);
+            mSpinner.setAdapter(adapter);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            key = getArguments().getString("key");
+
+            mSaveButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Save(key, mSpinner.getSelectedItemPosition());
+                    Close();
+                }
+            });
+            mCancelButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Close();
+                }
+            });
+            int savedValue = GetValue(key, getArguments().getInt("defaultValue"));
+            if(savedValue >= 0 && savedValue < options.length)
+                mSpinner.setSelection(savedValue);
+            mSpinner.requestFocus();
+            return view;
+        }
+        public void Close(){this.dismiss();}
+
+        @Override
+        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+            if (EditorInfo.IME_ACTION_DONE == actionId) {
+                Save(key, mSpinner.getSelectedItemPosition());
+                Close();
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -7,6 +7,22 @@
         <item>Random (Cat and Mouse)</item>
         <item>Random (Drunkard\'s Walk)</item>
     </string-array>
+    <string-array name="preferences_default_values">
+        <item>nothing</item>
+        <item>0.0.0.0</item>
+        <item>11235</item>
+        <item>nothing</item>
+        <item>000180000180</item>
+        <item>Manual</item>
+    </string-array>
+    <string-array name="preferences_keys">
+        <item>nothing</item>
+        <item>ipAddress</item>
+        <item>port</item>
+        <item>nothing</item>
+        <item>moveLimits</item>
+        <item>controlMode</item>
+    </string-array>
     <string-array name="preferences_text">
         <item>nothing</item>
         <item>Enter IP Address</item>
@@ -242,10 +258,16 @@
         
         ]]>
     </string>
+    <!-- From: file:/C:/Users/Administrator/Desktop/PetDot/Application/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="ip_regex">^((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9])\\.){0,3}((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9])){0,1}$</string>
     <!-- From: file:/C:/Users/Administrator/Desktop/PetDot/Application/src/main/res/values/activitycards-strings.xml -->
     <eat-comment/>
     <string name="navigationdraweractivity_description">This application allows you to control your PetDot! Click here to get started.</string>
     <string name="navigationdraweractivity_title">PetDot</string>
+    <!-- From: file:/C:/Users/Administrator/Desktop/PetDot/Application/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="port_regex">[0-9]{1,5}</string>
     <!-- From: file:/C:/Users/Administrator/Desktop/PetDot/Application/src/main/res/values/template-styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.Sample"/>

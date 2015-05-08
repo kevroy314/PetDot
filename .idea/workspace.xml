@@ -6,7 +6,95 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0496b7d8-b1a2-44bd-9481-792fa03b9bda" name="Default" comment="" />
+    <list default="true" id="0496b7d8-b1a2-44bd-9481-792fa03b9bda" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/fragment_edit_dropdown.xml" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\classes\debug\com\horecka\petdot\navigationdrawer\NavigationDrawerActivity$EditSettingDialog$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\classes\debug\com\horecka\petdot\navigationdrawer\NavigationDrawerActivity$EditSettingDialog$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\classes\debug\com\horecka\petdot\navigationdrawer\NavigationDrawerActivity$EditSettingDialog$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\classes\debug\com\horecka\petdot\navigationdrawer\NavigationDrawerActivity$EditSettingDialog.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\classes\release\com\horecka\petdot\navigationdrawer\NavigationDrawerActivity$EditSettingDialog$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\classes\release\com\horecka\petdot\navigationdrawer\NavigationDrawerActivity$EditSettingDialog$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\classes\release\com\horecka\petdot\navigationdrawer\NavigationDrawerActivity$EditSettingDialog$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\classes\release\com\horecka\petdot\navigationdrawer\NavigationDrawerActivity$EditSettingDialog.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\classes-055f191e0c4a72ef32b9057b66663099918fafd2.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\classes-588a411570afcf81facbea9c02f3eca7bec83e1b.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\classes-923795df7b7a4192fb1dfa4aaaffe6683acac266.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\classes-b290d65e3dbfcb4bb563c29f072507d301adfddd.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\classes-d2c2f1e70ef52e04cca9c2cf464c89f2ad885c6e.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\internal_impl-21.0.2-26ef1a7c7b3258705c1632089fd508904bb9fc48.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\internal_impl-21.0.2-2ea123cf294ff32cb2da4633f4d81ad99f5d5909.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\support-annotations-21.0.2-c52a46aa9c1473aa1703bf29a7600e8b72fb110f.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\res\debug\layout\fragment_edit_ip_address.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\res\release\layout\fragment_edit_ip_address.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\build\intermediates\dex-cache\cache.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Desktop\PetDot\build\intermediates\model_data.bin" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Administrator\Desktop\PetDot\Application\src\main\res\layout\fragment_edit_ip_address.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/fragment_edit_text.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/outputs/apk/Application-release-unaligned.apk" afterPath="$PROJECT_DIR$/Application/build/outputs/apk/Application-release-unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Application-release.apk" afterPath="$PROJECT_DIR$/Application/Application-release.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/MainActivity$SampleAdapter.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/MainActivity$SampleAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/MainActivity$SampleAdapter.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/MainActivity$SampleAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/MainActivity.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/MainActivity.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity$1.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity$1.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$array.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$array.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$array.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$array.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$attr.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$attr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$attr.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$attr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$bool.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$bool.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$bool.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$bool.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$color.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$color.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$color.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$color.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$dimen.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$dimen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$dimen.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$dimen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$drawable.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$drawable.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$id.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$id.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$integer.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$integer.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$layout.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/android/support/v7/appcompat/R$layout.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/android/support/v7/appcompat/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$layout.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$menu.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$menu.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$string.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$string.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$style.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$style.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$styleable.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$styleable.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/com/horecka/petdot/navigationdrawer/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/release/com/horecka/petdot/navigationdrawer/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/dex/release/classes.dex" afterPath="$PROJECT_DIR$/Application/build/intermediates/dex/release/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/Application/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/res/resources-release.ap_" afterPath="$PROJECT_DIR$/Application/build/intermediates/res/resources-release.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/Application/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/generated/source/r/debug/com/horecka/petdot/navigationdrawer/R.java" afterPath="$PROJECT_DIR$/Application/build/generated/source/r/debug/com/horecka/petdot/navigationdrawer/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/generated/source/r/release/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/Application/build/generated/source/r/release/android/support/v7/appcompat/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/generated/source/r/release/com/horecka/petdot/navigationdrawer/R.java" afterPath="$PROJECT_DIR$/Application/build/generated/source/r/release/com/horecka/petdot/navigationdrawer/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/Application/build/intermediates/symbols/debug/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/symbols/release/R.txt" afterPath="$PROJECT_DIR$/Application/build/intermediates/symbols/release/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/outputs/lint-results-release-fatal.html" afterPath="$PROJECT_DIR$/Application/build/outputs/lint-results-release-fatal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental/mergeResources/debug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental/mergeResources/release/merger.xml" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental/mergeResources/release/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/res/debug/values/values.xml" afterPath="$PROJECT_DIR$/Application/build/intermediates/res/debug/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/res/release/values/values.xml" afterPath="$PROJECT_DIR$/Application/build/intermediates/res/release/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="PetDot.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/Application/build/intermediates/assets/" />
@@ -44,6 +132,13 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="PetDot" />
   </component>
@@ -52,21 +147,32 @@
       <file leaf-file-name="NavigationDrawerActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0822898">
-              <caret line="260" column="57" selection-start-line="260" selection-start-column="57" selection-end-line="260" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.5939177">
+              <caret line="406" column="43" selection-start-line="406" selection-start-column="43" selection-end-line="406" selection-end-column="43" />
               <folding>
-                <element signature="e#10091#10092#0" expanded="true" />
-                <element signature="e#10128#10129#0" expanded="true" />
+                <element signature="e#7747#7748#0" expanded="true" />
+                <element signature="e#7783#7784#0" expanded="true" />
+                <element signature="e#8284#8327#0" expanded="true" />
+                <element signature="e#8679#8724#0" expanded="true" />
+                <element signature="e#12948#13083#0" expanded="true" />
+                <element signature="e#13082#13083#0" expanded="true" />
+                <element signature="e#16467#16669#0" expanded="true" />
+                <element signature="e#16668#16669#0" expanded="true" />
+                <element signature="e#16717#16852#0" expanded="true" />
+                <element signature="e#16851#16852#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PreferencesAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/horecka/petdot/navigationdrawer/PreferencesAdapter.java">
+      <file leaf-file-name="fragment_edit_dropdown.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_edit_dropdown.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="58" column="53" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="53" />
+            <state vertical-scroll-proportion="-1.1724138">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -75,36 +181,10 @@
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.2">
-              <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+            <state vertical-scroll-proportion="-14.56">
+              <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_edit_ip_address.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_edit_ip_address.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6896553">
-              <caret line="13" column="41" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="drawer_list_item.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/drawer_list_item.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.0">
-              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
           </provider>
         </entry>
       </file>
@@ -116,9 +196,12 @@
     </FindUsagesManager>
   </component>
   <component name="GenerateSignedApkSettings">
-    <option name="KEY_STORE_PATH" value="C:\Users\dev\apk_keystore.jks" />
+    <option name="KEY_STORE_PATH" value="C:\Users\Administrator\apk_keystore.jks" />
     <option name="KEY_ALIAS" value="horeckastore" />
     <option name="REMEMBER_PASSWORDS" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="tasksExpandState">
@@ -986,7 +1069,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4289979411133" />
+        <entry key="$PROJECT_DIR$" value="4293168436902" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1156,6 +1239,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_edit_ip_address.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_edit_text.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_edit_dropdown.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity.java" />
       </list>
@@ -1167,10 +1252,10 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1370" />
     <option name="height" value="744" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -1391,47 +1476,10 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="petdot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="navigationdrawer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PetDot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PetDot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="petdot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView">
@@ -1570,7 +1618,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1588,7 +1635,7 @@
     <property name="FullScreen" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
-    <property name="ExportApk.ApkPath" value="C:\Users\dev\AndroidStudioProjects\PetDot\Application" />
+    <property name="ExportApk.ApkPath" value="C:\Users\Administrator\Desktop\PetDot\Application" />
     <property name="ExportApk.Flavors" value="" />
     <property name="ExportApk.BuildType" value="release" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.WIDTH" value="422" />
@@ -1599,8 +1646,14 @@
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="petdot" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Application" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\PetDot\Application\src\main\res\layout" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.horecka.petdot.navigationdrawer" />
     </key>
@@ -1804,11 +1857,6 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SliceManager">
-    <option name="analysisUIOptions">
-      <AnalysisUIOptions />
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -1822,7 +1870,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1832,15 +1880,15 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5121029" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23903178" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2389313" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32027256" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24054463" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24045801" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1903,6 +1951,17 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/drawer_list_item.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/menu/navigation_drawer.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2062,13 +2121,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/res/values-v11/values.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3313783">
-          <caret line="328" column="35" selection-start-line="328" selection-start-column="35" selection-end-line="328" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/values-v11/template-styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2162,7 +2214,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2172,10 +2223,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/drawer_shadow.9.png">
-      <provider selected="true" editor-type-id="images">
+      <provider editor-type-id="ninepatcheditor">
         <state />
       </provider>
-      <provider editor-type-id="ninepatcheditor">
+      <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
@@ -2193,83 +2244,102 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_navigation_drawer.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6035503">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/sample_dashboard_item.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/sample_dashboard_item.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6035503">
           <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_edit_ip_address.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6896553">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.2">
-          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/drawer_list_item.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.0">
+        <state vertical-scroll-proportion="0.71132076">
           <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_edit_text.xml">
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5773585">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/horecka/petdot/navigationdrawer/PreferencesAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.3309481">
           <caret line="58" column="53" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_edit_dropdown.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1724138">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.56">
+          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/horecka/petdot/navigationdrawer/NavigationDrawerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0822898">
-          <caret line="260" column="57" selection-start-line="260" selection-start-column="57" selection-end-line="260" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.5939177">
+          <caret line="406" column="43" selection-start-line="406" selection-start-column="43" selection-end-line="406" selection-end-column="43" />
           <folding>
-            <element signature="e#10091#10092#0" expanded="true" />
-            <element signature="e#10128#10129#0" expanded="true" />
+            <element signature="e#7747#7748#0" expanded="true" />
+            <element signature="e#7783#7784#0" expanded="true" />
+            <element signature="e#8284#8327#0" expanded="true" />
+            <element signature="e#8679#8724#0" expanded="true" />
+            <element signature="e#12948#13083#0" expanded="true" />
+            <element signature="e#13082#13083#0" expanded="true" />
+            <element signature="e#16467#16669#0" expanded="true" />
+            <element signature="e#16668#16669#0" expanded="true" />
+            <element signature="e#16717#16852#0" expanded="true" />
+            <element signature="e#16851#16852#0" expanded="true" />
           </folding>
         </state>
       </provider>

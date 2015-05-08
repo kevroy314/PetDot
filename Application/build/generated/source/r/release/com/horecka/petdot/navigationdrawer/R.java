@@ -18,8 +18,10 @@ public final class R {
     }
     public static final class array {
         public static final int control_mode_options=0x7f050000;
-        public static final int preferences_text=0x7f050001;
-        public static final int preferences_titles=0x7f050002;
+        public static final int preferences_default_values=0x7f050001;
+        public static final int preferences_keys=0x7f050002;
+        public static final int preferences_text=0x7f050003;
+        public static final int preferences_titles=0x7f050004;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -1469,8 +1471,9 @@ containing a value of this type.
         public static final int disableHome=0x7f09000c;
         public static final int drawer_layout=0x7f09003f;
         public static final int dropdown=0x7f09001c;
-        public static final int edit_name=0x7f090042;
+        public static final int edit_dropdown=0x7f090042;
         public static final int edit_query=0x7f090033;
+        public static final int edit_text=0x7f090048;
         public static final int end=0x7f090014;
         public static final int expand_activities_button=0x7f090022;
         public static final int expanded_menu=0x7f090028;
@@ -1479,7 +1482,7 @@ containing a value of this type.
         public static final int icon=0x7f090026;
         public static final int ifRoom=0x7f090018;
         public static final int image=0x7f090023;
-        public static final int label_ip_address=0x7f090043;
+        public static final int label_text=0x7f090043;
         public static final int left_drawer=0x7f090041;
         public static final int listMode=0x7f090009;
         public static final int list_item=0x7f090025;
@@ -1507,10 +1510,11 @@ containing a value of this type.
         public static final int split_action_bar=0x7f090007;
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000b;
-        public static final int text_ip_address=0x7f090044;
         public static final int title=0x7f090027;
         public static final int up=0x7f090008;
         public static final int useLogo=0x7f090012;
+        public static final int value_spinner=0x7f090044;
+        public static final int value_text=0x7f090049;
         public static final int withText=0x7f09001a;
         public static final int wrap_content=0x7f09001d;
     }
@@ -1544,9 +1548,10 @@ containing a value of this type.
         public static final int activity_main=0x7f030017;
         public static final int activity_navigation_drawer=0x7f030018;
         public static final int drawer_list_item=0x7f030019;
-        public static final int fragment_edit_ip_address=0x7f03001a;
-        public static final int sample_dashboard_item=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
+        public static final int fragment_edit_dropdown=0x7f03001a;
+        public static final int fragment_edit_text=0x7f03001b;
+        public static final int sample_dashboard_item=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
     }
     public static final class menu {
         public static final int navigation_drawer=0x7f0d0000;
@@ -1573,8 +1578,10 @@ containing a value of this type.
         public static final int drawer_close=0x7f0b0012;
         public static final int drawer_open=0x7f0b0013;
         public static final int intro_message=0x7f0b0014;
-        public static final int navigationdraweractivity_description=0x7f0b0015;
-        public static final int navigationdraweractivity_title=0x7f0b0016;
+        public static final int ip_regex=0x7f0b0015;
+        public static final int navigationdraweractivity_description=0x7f0b0016;
+        public static final int navigationdraweractivity_title=0x7f0b0017;
+        public static final int port_regex=0x7f0b0018;
     }
     public static final class style {
         public static final int AppTheme=0x7f0c0000;
