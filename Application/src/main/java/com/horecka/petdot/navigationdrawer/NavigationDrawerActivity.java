@@ -18,7 +18,10 @@ package com.horecka.petdot.navigationdrawer;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.app.ListFragment;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.ArrayAdapter;
@@ -202,6 +205,9 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
                 editPortDialog.show(fm, "dlg_edit_text");
                 break;
             case 3: //Connect
+                ConnectButtonFragment connectFragment = ConnectButtonFragment.newInstance(
+                        mPreferencesText[position]);
+                connectFragment.show(fm, "dlg_connect_fragment");
                 break;
             case 4: //Move Limits
                 break;
@@ -324,10 +330,15 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
             mEditText.setOnEditorActionListener(this);
             mEditText.addTextChangedListener(new TextWatcher() {
                 @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {}
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                }
+
                 @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+
                 private String mPreviousText = "";
+
                 @Override
                 public void afterTextChanged(Editable s) {
                     if (regex.matcher(s).matches()) {
@@ -420,6 +431,62 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
                 return true;
             }
             return false;
+        }
+    }
+
+    public static class ConnectButtonFragment extends DialogFragment implements OnEditorActionListener {
+        private boolean connected;
+        private TextView mTextView;
+        private Button mConnectButton;
+
+        public ConnectButtonFragment() { }
+
+        public static ConnectButtonFragment newInstance(String message) {
+            ConnectButtonFragment f = new ConnectButtonFragment();
+            Bundle args = new Bundle();
+            args.putString("message", message);
+            f.setArguments(args);
+            return f;
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+            View view = inflater.inflate(R.layout.fragment_connect, container);
+            mTextView = (TextView) view.findViewById(R.id.label_text);
+            mTextView.setText(getArguments().getString("message"));
+            mConnectButton = (Button) view.findViewById(R.id.btn_connect);
+            mConnectButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Connect();
+                }
+            });
+            return view;
+        }
+        public void Close(){this.dismiss();}
+
+        @Override
+        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+            if (EditorInfo.IME_ACTION_DONE == actionId) {
+                Close();
+                return true;
+            }
+            return false;
+        }
+
+        public void Connect(){
+            connected = !connected;
+            if(connected) {
+                mTextView.setText("Connected");
+                mTextView.setTextColor(Color.GREEN);
+                mConnectButton.setText("Disconnect");
+            }
+            else {
+                mTextView.setText("Not Connected");
+                mTextView.setTextColor(Color.RED);
+                mConnectButton.setText("Connect");
+            }
         }
     }
 }

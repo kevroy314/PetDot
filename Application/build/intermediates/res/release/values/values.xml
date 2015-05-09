@@ -27,7 +27,7 @@
         <item>nothing</item>
         <item>Enter IP Address</item>
         <item>Enter Port</item>
-        <item>nothing</item>
+        <item>Click to Connect</item>
         <item>Enter Move Limits</item>
         <item>Select Control Mode</item>
     </string-array>
@@ -267,7 +267,7 @@
     <string name="navigationdraweractivity_title">PetDot</string>
     <!-- From: file:/C:/Users/Administrator/Desktop/PetDot/Application/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="port_regex">[0-9]{1,5}</string>
+    <string name="port_regex">[0-9]{0,5}</string>
     <!-- From: file:/C:/Users/Administrator/Desktop/PetDot/Application/src/main/res/values/template-styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.Sample"/>

@@ -27,7 +27,7 @@
         <item>nothing</item>
         <item>Enter IP Address</item>
         <item>Enter Port</item>
-        <item>nothing</item>
+        <item>Click to Connect</item>
         <item>Enter Move Limits</item>
         <item>Select Control Mode</item>
     </string-array>
@@ -53,7 +53,7 @@
         <item>Random (Drunkard\'s Walk)</item>
     </string-array>
     <string name="ip_regex">^((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9])\\.){0,3}((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9])){0,1}$</string>
-    <string name="port_regex">[0-9]{1,5}</string>
+    <string name="port_regex">[0-9]{0,5}</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
