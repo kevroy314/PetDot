@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/edit_bounds"
+    android:layout_width="wrap_content"
+    android:layout_height="300dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/label_text"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Enter Move Limits" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout00"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <TextView
+            android:id="@+id/label_xmin"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="XMin" />
+        <TextView
+            android:id="@+id/label_xmax"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="XMax" />
+        <TextView
+            android:id="@+id/label_ymin"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="YMin" />
+        <TextView
+            android:id="@+id/label_ymax"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="YMax" />
+</LinearLayout>
+    <LinearLayout
+        android:id="@+id/LinearLayout01"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+
+        <NumberPicker
+            android:id="@+id/min_x"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"></NumberPicker>
+        <NumberPicker
+            android:id="@+id/max_x"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"></NumberPicker>
+        <NumberPicker
+            android:id="@+id/min_y"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"></NumberPicker>
+        <NumberPicker
+            android:id="@+id/max_y"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"></NumberPicker>
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_alignParentBottom="true">
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:imeActionId="1"
+        android:text="Save"/>
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:imeActionId="0"
+        android:text="Cancel"/>
+        </LinearLayout>
+</LinearLayout><!-- From: file:/C:/Users/Administrator/Desktop/PetDot/Application/src/main/res/layout/fragment_edit_bounds.xml -->

@@ -27,6 +27,7 @@ import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.text.TextWatcher;
@@ -210,8 +211,15 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
                 connectFragment.show(fm, "dlg_connect_fragment");
                 break;
             case 4: //Move Limits
+                BoundsFragment boundsFragment = BoundsFragment.newInstance(
+                        mPreferencesText[position],
+                        mPreferencesKeys[position],
+                        mPreferencesDefaultValues[position]);
+                boundsFragment.show(fm, "dlg_edit_bounds");
                 break;
-            case 5: //Control Mode
+            case 5: //Invert/Swap Axis
+                break;
+            case 6: //Control Mode
                 SpinnerDialog editControlMode = SpinnerDialog.newInstance(
                         mPreferencesText[position],
                         mPreferencesKeys[position],
@@ -254,9 +262,12 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-    public static void Save(String tag, String value){
+    public static void Save(String tag, String value, String defaultValue){
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putString(tag, value);
+        if(value == "")
+            editor.putString(tag, defaultValue);
+        else
+            editor.putString(tag, value);
         editor.commit();
     }
 
@@ -278,6 +289,7 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
 
         private Pattern regex;
         private String key;
+        private String defaultValue;
 
         private EditText mEditText;
         private TextView mTextView;
@@ -311,19 +323,23 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
 
             regex = Pattern.compile(getArguments().getString("regex"));
             key = getArguments().getString("key");
+            defaultValue = getArguments().getString("defaultValue");
 
             mSaveButton.setOnClickListener(new View.OnClickListener() {
+                @Override
                 public void onClick(View v) {
-                    Save(key, mEditText.getText().toString());
-                    Close();
+                    Save(key, mEditText.getText().toString(), defaultValue);
+                    EditTextDialog.this.Close();
                 }
             });
             mCancelButton.setOnClickListener(new View.OnClickListener() {
+                @Override
                 public void onClick(View v) {
-                    Close();
+                    EditTextDialog.this.Close();
                 }
             });
-            String savedValue = GetValue(key, getArguments().getString("defaultValue"));
+            String savedValue = GetValue(key, defaultValue);
+            if(savedValue.trim() == "") savedValue = defaultValue;
             mEditText.setText(savedValue);
             mEditText.requestFocus();
             getDialog().getWindow().setSoftInputMode(LayoutParams.SOFT_INPUT_STATE_VISIBLE);
@@ -353,7 +369,7 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
         @Override
         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
             if (EditorInfo.IME_ACTION_DONE == actionId) {
-                Save(key, mEditText.getText().toString());
+                Save(key, mEditText.getText().toString(), defaultValue);
                 Close();
                 return true;
             }
@@ -380,8 +396,7 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
             args.putString("message", message);
             args.putString("key", key);
             args.putStringArray("options", options);
-
-            //args.putInt("defaultValue", defaultValue);
+            args.putInt("defaultValue", defaultValue);
             f.setArguments(args);
             return f;
         }
@@ -405,14 +420,16 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
             key = getArguments().getString("key");
 
             mSaveButton.setOnClickListener(new View.OnClickListener() {
+                @Override
                 public void onClick(View v) {
                     Save(key, mSpinner.getSelectedItemPosition());
-                    Close();
+                    SpinnerDialog.this.Close();
                 }
             });
             mCancelButton.setOnClickListener(new View.OnClickListener() {
+                @Override
                 public void onClick(View v) {
-                    Close();
+                    SpinnerDialog.this.Close();
                 }
             });
             int savedValue = GetValue(key, getArguments().getInt("defaultValue"));
@@ -458,8 +475,9 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
             mTextView.setText(getArguments().getString("message"));
             mConnectButton = (Button) view.findViewById(R.id.btn_connect);
             mConnectButton.setOnClickListener(new View.OnClickListener() {
+                @Override
                 public void onClick(View v) {
-                    Connect();
+                    ConnectButtonFragment.this.Connect();
                 }
             });
             return view;
@@ -486,6 +504,179 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
                 mTextView.setText("Not Connected");
                 mTextView.setTextColor(Color.RED);
                 mConnectButton.setText("Connect");
+            }
+        }
+    }
+
+    public static class BoundsFragment extends DialogFragment implements OnEditorActionListener {
+        private static final int max = 180;
+        private static final int min = 0;
+        private static final int stringFormatLength = 3;
+        private static final String stringFormat = "%03d";
+
+        private TextView mTextView;
+        private NumberPicker mXMinPicker;
+        private NumberPicker mXMaxPicker;
+        private NumberPicker mYMinPicker;
+        private NumberPicker mYMaxPicker;
+        private Button mSaveButton;
+        private Button mCancelButton;
+
+        private String key;
+        private String defaultValue;
+
+        public BoundsFragment() { }
+
+        public static BoundsFragment newInstance(String message, String key, String defaultValue) {
+            BoundsFragment f = new BoundsFragment();
+            Bundle args = new Bundle();
+            args.putString("message", message);
+            args.putString("key", key);
+            args.putString("defaultValue", defaultValue);
+            f.setArguments(args);
+            return f;
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+            View view = inflater.inflate(R.layout.fragment_edit_bounds, container);
+            mTextView = (TextView) view.findViewById(R.id.label_text);
+            mTextView.setText(getArguments().getString("message"));
+
+            mSaveButton = (Button) view.findViewById(R.id.btn_save);
+            mCancelButton = (Button) view.findViewById(R.id.btn_cancel);
+
+            key = getArguments().getString("key");
+            defaultValue = getArguments().getString("defaultValue");
+            String savedValue = GetValue(key, defaultValue);
+
+            mSaveButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Save(key, BoundsFragment.this.getStateString(), defaultValue);
+                    BoundsFragment.this.Close();
+                }
+            });
+            mCancelButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    BoundsFragment.this.Close();
+                }
+            });
+
+            mXMinPicker = (NumberPicker) view.findViewById(R.id.min_x);
+            mXMinPicker.setMinValue(min);
+            mXMinPicker.setMaxValue(max - 1);
+            mXMinPicker.setTag("xmin");
+            mXMinPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+                @Override
+                public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                    BoundsFragment.this.ValueChanged(picker, oldVal, newVal);
+                }
+            });
+            mXMaxPicker = (NumberPicker) view.findViewById(R.id.max_x);
+            mXMaxPicker.setMinValue(min+1);
+            mXMaxPicker.setMaxValue(max);
+            mXMaxPicker.setTag("xmax");
+            mXMaxPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+                @Override
+                public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                    BoundsFragment.this.ValueChanged(picker, oldVal, newVal);
+                }
+            });
+            mYMinPicker = (NumberPicker) view.findViewById(R.id.min_y);
+            mYMinPicker.setMinValue(min);
+            mYMinPicker.setMaxValue(max - 1);
+            mYMinPicker.setTag("ymin");
+            mYMinPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+                @Override
+                public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                    BoundsFragment.this.ValueChanged(picker, oldVal, newVal);
+                }
+            });
+            mYMaxPicker = (NumberPicker) view.findViewById(R.id.max_y);
+            mYMaxPicker.setMinValue(min+1);
+            mYMaxPicker.setMaxValue(max);
+            mYMaxPicker.setTag("ymax");
+            mYMaxPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+                @Override
+                public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                    BoundsFragment.this.ValueChanged(picker, oldVal, newVal);
+                }
+            });
+
+            setStateFromString(savedValue);
+
+            return view;
+        }
+        public void Close(){this.dismiss();}
+
+        @Override
+        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+            if (EditorInfo.IME_ACTION_DONE == actionId) {
+                Save(key, getStateString(), defaultValue);
+                Close();
+                return true;
+            }
+            return false;
+        }
+
+        public String getStateString(){
+            String stateString = "";
+            int xmin = mXMinPicker.getValue();
+            int xmax = mXMaxPicker.getValue();
+            int ymin = mYMinPicker.getValue();
+            int ymax = mYMaxPicker.getValue();
+
+            stateString += String.format(stringFormat, xmin);
+            stateString += String.format(stringFormat, xmax);
+            stateString += String.format(stringFormat, ymin);
+            stateString += String.format(stringFormat, ymax);
+
+            return stateString;
+        }
+
+        public void setStateFromString(String stateString){
+            if(stateString.length() != stringFormatLength * 4) return;
+            int xmin = min;
+            int xmax = max;
+            int ymin = min;
+            int ymax = max;
+            try{
+                xmin = Integer.valueOf(stateString.substring(0,stringFormatLength));
+                xmax = Integer.valueOf(stateString.substring(stringFormatLength,stringFormatLength*2));
+                ymin = Integer.valueOf(stateString.substring(stringFormatLength*2,stringFormatLength*3));
+                ymax = Integer.valueOf(stateString.substring(stringFormatLength*3,stringFormatLength*4));
+            }catch(NumberFormatException e){return;}
+            if(xmin >= xmax) return;
+            if(ymin >= ymax) return;
+            if(xmin < min || ymin < min || xmax < (min+1) || ymax < (min+1)) return;
+            if(xmin > (max-1) || ymin > (max-1) || xmax > max || ymax > max) return;
+            mXMinPicker.setValue(xmin);
+            mXMaxPicker.setValue(xmax);
+            mYMinPicker.setValue(ymin);
+            mYMaxPicker.setValue(ymax);
+        }
+
+        public void ValueChanged(NumberPicker picker, Integer oldVal, Integer newVal){
+            String tag = (String)picker.getTag();
+            switch(tag) {
+                case "xmin":
+                    if(newVal>=mXMaxPicker.getValue()) mXMaxPicker.setValue(newVal+1);
+                    break;
+                case "xmax":
+                    if(newVal<=mXMinPicker.getValue()) mXMinPicker.setValue(newVal-1);
+                    break;
+                case "ymin":
+                    if(newVal>=mYMaxPicker.getValue()) mYMaxPicker.setValue(newVal+1);
+                    break;
+                case "ymax":
+                    if(newVal<=mYMinPicker.getValue()) mYMinPicker.setValue(newVal-1);
+                    break;
+                default:
+                    break;
             }
         }
     }

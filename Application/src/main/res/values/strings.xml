@@ -21,6 +21,7 @@
         <item>Port</item>
         <item>Connect</item>
         <item>Move Limits</item>
+        <item>Invert/Swap Axis</item>
         <item>Control Mode</item>
     </string-array>
     <string-array name="preferences_text">
@@ -29,6 +30,7 @@
         <item>Enter Port</item>
         <item>Click to Connect</item>
         <item>Enter Move Limits</item>
+        <item>Pick Axis to Invert/Swap</item>
         <item>Select Control Mode</item>
     </string-array>
     <string-array name="preferences_keys">
@@ -37,6 +39,7 @@
         <item>port</item>
         <item>nothing</item>
         <item>moveLimits</item>
+        <item>invertSwap</item>
         <item>controlMode</item>
     </string-array>
     <string-array name="preferences_default_values">
@@ -45,6 +48,7 @@
         <item>11235</item>
         <item>nothing</item>
         <item>000180000180</item>
+        <item>000</item>
         <item>0</item>
     </string-array>
     <string-array name="control_mode_options">
