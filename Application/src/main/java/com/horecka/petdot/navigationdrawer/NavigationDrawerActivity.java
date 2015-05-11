@@ -17,17 +17,25 @@
 package com.horecka.petdot.navigationdrawer;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -92,6 +100,10 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
     private String[] mPreferencesKeys;
     private String[] mPreferencesDefaultValues;
 
+    private FrameLayout mContentFrame;
+    private DrawingView dv ;
+    private Paint mPaint;
+
     private static SharedPreferences prefs;
 
     @Override
@@ -110,6 +122,7 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (RecyclerView) findViewById(R.id.left_drawer);
+        mContentFrame = (FrameLayout) findViewById(R.id.content_frame);
 
         // set a custom shadow that overlays the main content when the drawer opens
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
@@ -147,8 +160,19 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
         if (savedInstanceState == null) {
             selectItem(0);
         }
-    }
 
+        dv = new DrawingView(this);
+        mContentFrame.addView(dv);
+        //setContentView(dv);
+        mPaint = new Paint();
+        mPaint.setAntiAlias(true);
+        mPaint.setDither(true);
+        mPaint.setColor(Color.RED);
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeJoin(Paint.Join.ROUND);
+        mPaint.setStrokeCap(Paint.Cap.ROUND);
+        mPaint.setStrokeWidth(12);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -291,6 +315,136 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
         return prefs.getInt(tag, defaultValue);
     }
 
+    public class DrawingView extends View {
+
+        public int width;
+        public  int height;
+        private Bitmap mBitmap;
+        private Canvas mCanvas;
+        private Path mPath;
+        private Paint mBitmapPaint;
+        private Paint mRectPaint;
+        Context context;
+        private Paint circlePaint;
+        private Path circlePath;
+
+        public DrawingView(Context c) {
+            super(c);
+            context = c;
+            mPath = new Path();
+            mBitmapPaint = new Paint(Paint.DITHER_FLAG);
+            circlePaint = new Paint();
+            circlePath = new Path();
+            circlePaint.setAntiAlias(true);
+            circlePaint.setColor(Color.BLUE);
+            circlePaint.setStyle(Paint.Style.STROKE);
+            circlePaint.setStrokeJoin(Paint.Join.MITER);
+            circlePaint.setStrokeWidth(4f);
+            mRectPaint = new Paint();
+            mRectPaint.setStyle(Paint.Style.FILL);
+        }
+
+        @Override
+        protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+            super.onSizeChanged(w, h, oldw, oldh);
+            width = w;
+            height = h;
+            mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+            mCanvas = new Canvas(mBitmap);
+            mRectPaint.setColor(Color.argb(255, 0, 0, 0));
+            mCanvas.drawRect(0, 0, width, height, mRectPaint);
+            mRectPaint.setColor(Color.argb(20,0,0,0));
+        }
+        @Override
+        protected void onDraw(Canvas canvas) {
+            mCanvas.drawRect(0,0,width,height,mRectPaint);
+            canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
+            canvas.drawPath(mPath, mPaint);
+            canvas.drawPath( circlePath,  circlePaint);
+            super.onDraw(canvas);
+        }
+
+        private float mX, mY;
+        private static final float TOUCH_TOLERANCE = 0;
+
+        private void touch_start(float x, float y) {
+            mPath.reset();
+            mPath.moveTo(x, y);
+            mX = x;
+            mY = y;
+        }
+        private void touch_move(float x, float y) {
+            float dx = Math.abs(x - mX);
+            float dy = Math.abs(y - mY);
+            if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
+                mPath.quadTo(mX, mY, (x + mX)/2, (y + mY)/2);
+                mX = x;
+                mY = y;
+
+                circlePath.reset();
+                circlePath.addCircle(mX, mY, 30, Path.Direction.CW);
+            }
+        }
+        private void touch_up() {
+            mPath.lineTo(mX, mY);
+            circlePath.reset();
+            // commit the path to our offscreen
+            mCanvas.drawPath(mPath, mPaint);
+            // kill this so we don't double draw
+            mPath.reset();
+        }
+        private long startTime;
+        private int clickCount = 0;
+        private long duration = 0;
+        static final int MAX_DURATION = 200;
+        @Override
+        public boolean onTouchEvent(MotionEvent event) {
+            float x = event.getX();
+            float y = event.getY();
+
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    touch_start(x, y);
+                    startTime = System.currentTimeMillis();
+                    clickCount++;
+                    invalidate();
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    touch_move(x, y);
+                    invalidate();
+                    break;
+                case MotionEvent.ACTION_UP:
+                    touch_up();
+                    long time = System.currentTimeMillis() - startTime;
+                    duration=  duration + time;
+                    if(clickCount == 2)
+                    {
+                        if(duration<= MAX_DURATION)
+                        {
+                            mBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+                            mCanvas = new Canvas(mBitmap);
+                            mRectPaint.setColor(Color.argb(255, 0, 0, 0));
+                            mCanvas.drawRect(0, 0, width, height, mRectPaint);
+                            mRectPaint.setColor(Color.argb(20,0,0,0));
+                        }
+                        clickCount = 0;
+                        duration = 0;
+                        break;
+                    }
+                    invalidate();
+                    break;
+            }
+
+            return true;
+        }
+    }
+
+    /**
+     * ********************************************************************************************
+     * Edit Text Dialog allows popup editing text that must follow a regex
+     * ********************************************************************************************
+     */
+
     public static class EditTextDialog extends DialogFragment implements OnEditorActionListener {
 
         private Pattern regex;
@@ -384,6 +538,12 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
         public void Close(){this.dismiss();}
     }
 
+    /**
+     * ********************************************************************************************
+     * Spinner Dialog popup allows picking of drop down options
+     * ********************************************************************************************
+     */
+
     public static class SpinnerDialog extends DialogFragment implements OnEditorActionListener {
 
         private String key;
@@ -457,6 +617,12 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
         }
     }
 
+    /**
+     * ********************************************************************************************
+     * Connect Button fragment allows activation of the connect button
+     * ********************************************************************************************
+     */
+
     public static class ConnectButtonFragment extends DialogFragment implements OnEditorActionListener {
         private boolean connected;
         private TextView mTextView;
@@ -513,6 +679,12 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
             }
         }
     }
+
+    /**
+     * ********************************************************************************************
+     * Bounds fragment allows picking of bounds between 0 and 180 for either axis
+     * ********************************************************************************************
+     */
 
     public static class BoundsFragment extends DialogFragment implements OnEditorActionListener {
         private static final int max = 180;
@@ -686,6 +858,12 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
             }
         }
     }
+
+    /**
+     * ********************************************************************************************
+     * Invert Swap fragment allows inverting or swapping of axis
+     * ********************************************************************************************
+     */
 
     public static class InvertSwapFragment extends DialogFragment implements OnEditorActionListener {
         private TextView mTextView;
