@@ -26,6 +26,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
@@ -218,6 +219,11 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
                 boundsFragment.show(fm, "dlg_edit_bounds");
                 break;
             case 5: //Invert/Swap Axis
+                InvertSwapFragment invertSwapFragment = InvertSwapFragment.newInstance(
+                        mPreferencesText[position],
+                        mPreferencesKeys[position],
+                        mPreferencesDefaultValues[position]);
+                invertSwapFragment.show(fm, "dlg_edit_invertswap");
                 break;
             case 6: //Control Mode
                 SpinnerDialog editControlMode = SpinnerDialog.newInstance(
@@ -678,6 +684,102 @@ public class NavigationDrawerActivity extends Activity implements PreferencesAda
                 default:
                     break;
             }
+        }
+    }
+
+    public static class InvertSwapFragment extends DialogFragment implements OnEditorActionListener {
+        private TextView mTextView;
+        private CheckBox mInvertXCheckbox;
+        private CheckBox mInvertYCheckbox;
+        private CheckBox mSwapCheckbox;
+        private Button mSaveButton;
+        private Button mCancelButton;
+
+        private String key;
+        private String defaultValue;
+
+        public InvertSwapFragment() { }
+
+        public static InvertSwapFragment newInstance(String message, String key, String defaultValue) {
+            InvertSwapFragment f = new InvertSwapFragment();
+            Bundle args = new Bundle();
+            args.putString("message", message);
+            args.putString("key", key);
+            args.putString("defaultValue", defaultValue);
+            f.setArguments(args);
+            return f;
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+            View view = inflater.inflate(R.layout.fragment_edit_invertswap, container);
+            mTextView = (TextView) view.findViewById(R.id.label_text);
+            mTextView.setText(getArguments().getString("message"));
+
+            mInvertXCheckbox = (CheckBox) view.findViewById(R.id.checkbox_invert_x);
+            mInvertYCheckbox = (CheckBox) view.findViewById(R.id.checkbox_invert_y);
+            mSwapCheckbox = (CheckBox) view.findViewById(R.id.checkbox_swap);
+
+            mSaveButton = (Button) view.findViewById(R.id.btn_save);
+            mCancelButton = (Button) view.findViewById(R.id.btn_cancel);
+
+            key = getArguments().getString("key");
+            defaultValue = getArguments().getString("defaultValue");
+            String savedValue = GetValue(key, defaultValue);
+
+            mSaveButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Save(key, InvertSwapFragment.this.getStateString(), defaultValue);
+                    InvertSwapFragment.this.Close();
+                }
+            });
+            mCancelButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    InvertSwapFragment.this.Close();
+                }
+            });
+
+            setStateFromString(savedValue);
+
+            return view;
+        }
+        public void Close(){this.dismiss();}
+
+        @Override
+        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+            if (EditorInfo.IME_ACTION_DONE == actionId) {
+                Save(key, getStateString(), defaultValue);
+                Close();
+                return true;
+            }
+            return false;
+        }
+
+        public String getStateString(){
+            String stateString = "";
+            boolean invertXChecked = mInvertXCheckbox.isChecked();
+            boolean invertYChecked = mInvertYCheckbox.isChecked();
+            boolean swap = mSwapCheckbox.isChecked();
+
+            stateString += invertXChecked?"1":"0";
+            stateString += invertYChecked?"1":"0";
+            stateString += swap?"1":"0";
+
+            return stateString;
+        }
+
+        public void setStateFromString(String stateString){
+            if(stateString.length() != 3) return;
+            for(int i = 0; i < stateString.length();i++)
+                if(!(stateString.charAt(i) == '0' || stateString.charAt(i) == '1'))
+                    return;
+            mInvertXCheckbox.setChecked(stateString.charAt(0) == '1');
+            mInvertXCheckbox.setChecked(stateString.charAt(0) == '1');
+            mSwapCheckbox.setChecked(stateString.charAt(0) == '1');
         }
     }
 }

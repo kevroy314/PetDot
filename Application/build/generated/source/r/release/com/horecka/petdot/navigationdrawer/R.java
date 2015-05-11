@@ -1466,6 +1466,9 @@ containing a value of this type.
         public static final int btn_connect=0x7f090045;
         public static final int btn_save=0x7f090051;
         public static final int checkbox=0x7f090029;
+        public static final int checkbox_invert_x=0x7f090059;
+        public static final int checkbox_invert_y=0x7f09005a;
+        public static final int checkbox_swap=0x7f09005b;
         public static final int collapseActionView=0x7f090017;
         public static final int connect_fragment=0x7f090042;
         public static final int content_frame=0x7f090040;
@@ -1477,8 +1480,9 @@ containing a value of this type.
         public static final int dropdown=0x7f09001c;
         public static final int edit_bounds=0x7f090046;
         public static final int edit_dropdown=0x7f090053;
+        public static final int edit_invert_swap=0x7f090055;
         public static final int edit_query=0x7f090033;
-        public static final int edit_text=0x7f090055;
+        public static final int edit_text=0x7f09005c;
         public static final int end=0x7f090014;
         public static final int expand_activities_button=0x7f090022;
         public static final int expanded_menu=0x7f090028;
@@ -1487,6 +1491,9 @@ containing a value of this type.
         public static final int icon=0x7f090026;
         public static final int ifRoom=0x7f090018;
         public static final int image=0x7f090023;
+        public static final int label_invert_x=0x7f090056;
+        public static final int label_invert_y=0x7f090057;
+        public static final int label_swap=0x7f090058;
         public static final int label_text=0x7f090043;
         public static final int label_xmax=0x7f090049;
         public static final int label_xmin=0x7f090048;
@@ -1527,7 +1534,7 @@ containing a value of this type.
         public static final int up=0x7f090008;
         public static final int useLogo=0x7f090012;
         public static final int value_spinner=0x7f090054;
-        public static final int value_text=0x7f090056;
+        public static final int value_text=0x7f09005d;
         public static final int withText=0x7f09001a;
         public static final int wrap_content=0x7f09001d;
     }
@@ -1564,9 +1571,10 @@ containing a value of this type.
         public static final int fragment_connect=0x7f03001a;
         public static final int fragment_edit_bounds=0x7f03001b;
         public static final int fragment_edit_dropdown=0x7f03001c;
-        public static final int fragment_edit_text=0x7f03001d;
-        public static final int sample_dashboard_item=0x7f03001e;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001f;
+        public static final int fragment_edit_invertswap=0x7f03001d;
+        public static final int fragment_edit_text=0x7f03001e;
+        public static final int sample_dashboard_item=0x7f03001f;
+        public static final int support_simple_spinner_dropdown_item=0x7f030020;
     }
     public static final class menu {
         public static final int navigation_drawer=0x7f0d0000;

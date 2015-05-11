@@ -16,32 +16,11 @@
         <dex dex="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\classes-1afb371a49158d4d430e74b6d88e0a4206c71fe6.jar" />
     </item>
     <item
-        jar="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.2\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4796f18d3750bf2bfa078407a94a7f9db35b440d">
-        <dex dex="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\classes-f7afe35b4ad80824b7b3706a23cb8f474e3d1aa4.jar" />
-    </item>
-    <item
-        jar="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.2\libs\internal_impl-21.0.2.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9346da9fb778af9e451211bbc3541daced174ba7">
-        <dex dex="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\internal_impl-21.0.2-e6fb0e451dbb2a095c7d7ee6454b1c1e1ae98823.jar" />
-    </item>
-    <item
         jar="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.2\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="d1bf02de1c56d942e7a9d093b8610ba1ef4128e3">
         <dex dex="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\classes-481f44e89c2fff5d8d3a44d75dfb94229388cf71.jar" />
-    </item>
-    <item
-        jar="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.2\libs\internal_impl-21.0.2.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f">
-        <dex dex="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\internal_impl-21.0.2-d842649642a82db44935ae07511a0c34a0a7677b.jar" />
     </item>
     <item
         jar="C:\Users\Administrator\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.2\support-annotations-21.0.2.jar"
@@ -56,6 +35,27 @@
         revision="21.1.2"
         sha1="61965ae058916e6a57950dd61b0164dc866af19a">
         <dex dex="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\classes-0c29394b43ae1bac1e6573abc9f5460860ce23e1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.2\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4796f18d3750bf2bfa078407a94a7f9db35b440d">
+        <dex dex="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\classes-f7afe35b4ad80824b7b3706a23cb8f474e3d1aa4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.2\libs\internal_impl-21.0.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9346da9fb778af9e451211bbc3541daced174ba7">
+        <dex dex="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\internal_impl-21.0.2-e6fb0e451dbb2a095c7d7ee6454b1c1e1ae98823.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.2\libs\internal_impl-21.0.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f">
+        <dex dex="C:\Users\Administrator\Desktop\PetDot\Application\build\intermediates\pre-dexed\release\internal_impl-21.0.2-d842649642a82db44935ae07511a0c34a0a7677b.jar" />
     </item>
 
 </items>
